@@ -50,9 +50,6 @@ def main():
     if not platform.system() == "Linux":
         sys.exit("'%s' OS not supported!" % platform.system())
 
-    if os.geteuid() == 0:
-        sys.exit("Camplayer is not supposed to be run as root!")
-
     GLOBALS.PYTHON_VER = sys.version_info
     if GLOBALS.PYTHON_VER < CONSTANTS.PYTHON_VER_MIN:
         sys.exit("Python version '%i.%i' or newer required!"
